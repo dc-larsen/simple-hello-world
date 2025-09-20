@@ -1,5 +1,6 @@
 const colors = require('colors');
 const figlet = require('figlet');
+const browserlist = require('browserlist');
 
 console.log('\n');
 
@@ -23,6 +24,26 @@ figlet('Hello World!', function(err, data) {
     console.log(colors.white('  Node Version: ' + process.version));
     console.log(colors.white('  Platform: ' + process.platform));
     console.log(colors.white('  Architecture: ' + process.arch));
+
+    // Display browser compatibility info using browserlist
+    try {
+        const browsers = browserlist.getBrowserList();
+        console.log('\n' + colors.cyan('🌐 Browser Compatibility:'));
+
+        if (Array.isArray(browsers) && browsers.length > 0) {
+            console.log(colors.white('  Supported browsers: ' + browsers.length));
+            browsers.slice(0, 3).forEach((browser, index) => {
+                console.log(colors.white(`  ${index + 1}. ${browser}`));
+            });
+            if (browsers.length > 3) {
+                console.log(colors.gray(`  ... and ${browsers.length - 3} more`));
+            }
+        } else {
+            console.log(colors.white('  Browser data: Available'));
+        }
+    } catch (error) {
+        console.log(colors.yellow('  Browser compatibility: Not available'));
+    }
 
     console.log('\n' + colors.magenta('🎉 Hello World application started successfully!'));
     console.log(colors.gray('👋 Thanks for using Simple Hello World!\n'));
