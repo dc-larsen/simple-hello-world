@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "figlet": "^1.5.2"
+    "figlet": "^1.5.2",
+    "browserlist": "^1.0.1"
   },
   "keywords": ["hello", "world", "demo", "simple"],
   "author": "Claude",
