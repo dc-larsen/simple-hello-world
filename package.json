@@ -1,0 +1,18 @@
+{
+  "name": "simple-hello-world",
+  "version": "1.0.0",
+  "description": "A simple hello world Node.js application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "figlet": "^1.5.2"
+  },
+  "keywords": ["hello", "world", "demo", "simple"],
+  "author": "Claude",
+  "license": "MIT"
+}
